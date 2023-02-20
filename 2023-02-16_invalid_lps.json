@@ -1,0 +1,22 @@
+[
+   {
+      "invalid_erc": "0x8A421C3A25e8158b9aC815aE1319fBCf83F6bD6c",
+      "lp_address": "0xd943b8CF96Fe3940A73BCf4cEaCBB3f616c2F542",
+      "dex_factory": "0x43eC799eAdd63848443E2347C49f5f52e8Fe0F6f"
+   },
+   {
+      "invalid_erc": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
+      "lp_address": "0x1A1405B7B2065fB72eD0B4f97027A101550c52A7",
+      "dex_factory": "0x115934131916C8b277DD010Ee02de363c09d037c"
+   },
+   {
+      "invalid_erc": "0x045c335f9C408FE456611Db905dDe61a334980a7",
+      "lp_address": "0xa41f0C52facf5F12ac4eff04Bda9645a7247f1d1",
+      "dex_factory": "0x115934131916C8b277DD010Ee02de363c09d037c"
+   },
+   {
+      "invalid_erc": "0x77F570Baf4eF11Eff266f4432289C8C0CA7255b1",
+      "lp_address": "0xa933b9111D4561c520CE447fC9FF27B9Cf020081",
+      "dex_factory": "0x115934131916C8b277DD010Ee02de363c09d037c"
+   }
+]
