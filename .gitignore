@@ -5,4 +5,4 @@ __pycache__
 build/
 reports/
 archive_data/
-./*.json
+*.json
