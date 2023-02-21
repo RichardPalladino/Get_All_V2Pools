@@ -22,8 +22,8 @@ def get_num_deployed() -> dict:
             )
             bogus_addresses.append(
                 {
-                    "factory": address,
-                    "reason": f'interface.IUniswapV2Factory failure on {active_network} with {dex} factory and error "{err}"',
+                    "factory": str(address),
+                    "reason": f'interface.IUniswapV2Factory failure on {str(active_network)} with {str(dex)} factory and error "{err}"',
                 }
             )
         factories[dex] = factory.allPairsLength()
@@ -52,7 +52,7 @@ def get_pool_data(_address: str) -> dict:
         )
         bogus_addresses.append(
             {
-                "lp_address": _address,
+                "lp_address": str(_address),
                 "reason": f'error at "get_pool_data()": {err}',
             }
         )
@@ -76,7 +76,7 @@ def get_erc20_data(_address: str) -> dict:
         )
         bogus_addresses.append(
             {
-                "erc20_address": _address,
+                "erc20_address": str(_address),
                 "reason": f'error at "get_erc20_data()": {err}',
             }
         )
@@ -104,15 +104,15 @@ def main() -> None:
             )
             bogus_addresses.append(
                 {
-                    "factory": factory_name,
-                    "reason": f"interface.IUniswapV2Factory error on {active_network}: {err}",
+                    "factory": str(factory_name),
+                    "reason": f"interface.IUniswapV2Factory error on {str(active_network)}: {err}",
                 }
             )
             continue
         factory_address = str(factory.address)
         factory_lps[factory_address] = []
         # Loop through each LP listed in the Factory
-        for i in range(22001, 28001):
+        for i in range(33001, 38001):
             try:
                 tmp_lp_address = factory.allPairs(i)
             except Exception as err:
@@ -121,7 +121,7 @@ def main() -> None:
                 )
                 bogus_addresses.append(
                     {
-                        "factory": factory,
+                        "factory": str(factory),
                         "index": str(i),
                         "reason": f'Error querying "factory.allpairs()": {err}',
                     }
@@ -141,7 +141,7 @@ def main() -> None:
                 print(f"LP {tmp_lp_address} is invalid")
                 bogus_addresses.append(
                     {
-                        "lp_address": tmp_lp_address,
+                        "lp_address": str(tmp_lp_address),
                         "reason": f"either get_pool_data() failure or one of the tokens is bad",
                     }
                 )
@@ -168,9 +168,9 @@ def main() -> None:
                         pairs[tmp_lp_address] = False
                         bogus_addresses.append(
                             {
-                                "invalid_erc20": token0_address,
-                                "lp_address": tmp_lp_address,
-                                "dex_factory": factory_address,
+                                "invalid_erc20": str(token0_address),
+                                "lp_address": str(tmp_lp_address),
+                                "dex_factory": str(factory_address),
                             }
                         )
                         continue
@@ -197,9 +197,9 @@ def main() -> None:
                             pairs[tmp_lp_address] = False
                             bogus_addresses.append(
                                 {
-                                    "invalid_erc20": token1_address,
-                                    "lp_address": tmp_lp_address,
-                                    "dex_factory": factory_address,
+                                    "invalid_erc20": str(token1_address),
+                                    "lp_address": str(tmp_lp_address),
+                                    "dex_factory": str(factory_address),
                                 }
                             )
                             continue
@@ -238,7 +238,10 @@ def main() -> None:
                     ) < 1:
                         print(f"{tmp_lp_address} has too little reserves")
                         bogus_addresses.append(
-                            {"lp_address": tmp_lp_address, "reason": "low reserves"}
+                            {
+                                "lp_address": str(tmp_lp_address),
+                                "reason": "low reserves",
+                            }
                         )
                         pairs[tmp_lp_address] = False
                     else:

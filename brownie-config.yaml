@@ -24,6 +24,7 @@ networks:
       # bamboo_swap: "0x3823ac41b77e51bf0e6536ce465479cbdedcaea9"
       # sushiswap_v2: "0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac"
       uniswap_v2: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"
+      # verse_dex: "0xee3E9E46E34a27dC755a63e2849C9913Ee1A06E2"  # bitcoin.com's DEX
     usd_contracts:
       usdc:
         address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
