@@ -14,17 +14,17 @@ networks:
     verify: True
   mainnet-fork:
     factories:
-      # fraxswap_v1_old: "0x54F454D747e037Da288dB568D4121117EAb34e79"
-      # fraxswap_v1: "0xB076b06F669e682609fb4a8C6646D2619717Be4b"
-      # fraxswap_v2: "0x43eC799eAdd63848443E2347C49f5f52e8Fe0F6f"
-      # apeswap_v2: "0xBAe5dc9B19004883d0377419FeF3c2C8832d7d7B"
-      # shibaswap: "0x115934131916C8b277DD010Ee02de363c09d037c"
-      # swapr: "0xd34971BaB6E5E356fd250715F5dE0492BB070452"
-      # radioshack_dex: "0x91fAe1bc94A9793708fbc66aDcb59087C46dEe10"
-      # bamboo_swap: "0x3823ac41b77e51bf0e6536ce465479cbdedcaea9"
-      # sushiswap_v2: "0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac"
+      fraxswap_v1_old: "0x54F454D747e037Da288dB568D4121117EAb34e79"
+      fraxswap_v1: "0xB076b06F669e682609fb4a8C6646D2619717Be4b"
+      fraxswap_v2: "0x43eC799eAdd63848443E2347C49f5f52e8Fe0F6f"
+      apeswap_v2: "0xBAe5dc9B19004883d0377419FeF3c2C8832d7d7B"
+      shibaswap: "0x115934131916C8b277DD010Ee02de363c09d037c"
+      swapr: "0xd34971BaB6E5E356fd250715F5dE0492BB070452"
+      radioshack_dex: "0x91fAe1bc94A9793708fbc66aDcb59087C46dEe10"
+      bamboo_swap: "0x3823ac41b77e51bf0e6536ce465479cbdedcaea9"
+      sushiswap_v2: "0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac"
       uniswap_v2: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"
-      # verse_dex: "0xee3E9E46E34a27dC755a63e2849C9913Ee1A06E2"  # bitcoin.com's DEX
+      verse_dex: "0xee3E9E46E34a27dC755a63e2849C9913Ee1A06E2"  # bitcoin.com's DEX
     usd_contracts:
       usdc:
         address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"

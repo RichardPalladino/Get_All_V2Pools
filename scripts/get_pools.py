@@ -10,6 +10,13 @@ LOCAL_BLOCKCHAINS = LOCAL_BLOCKCHAIN_FORKS + ["development", "ganache-local", "h
 bogus_addresses = []
 
 
+def serialize_sets(obj):  # so JSON can handle sets
+    if isinstance(obj, set):
+        return list(obj)
+
+    return obj
+
+
 def get_num_deployed() -> dict:
     factories = {}
     active_network = network.show_active()
@@ -29,10 +36,6 @@ def get_num_deployed() -> dict:
         factories[dex] = factory.allPairsLength()
 
     return factories
-
-    # pool_addresses_provider = interface.ILendingPoolAddressesProvider(
-    #     config["networks"][network.show_active()]["lending_pool_addresses"]
-    # )
 
 
 def get_pool_data(_address: str) -> dict:
@@ -112,7 +115,7 @@ def main() -> None:
         factory_address = str(factory.address)
         factory_lps[factory_address] = []
         # Loop through each LP listed in the Factory
-        for i in range(33001, 38001):
+        for i in range(0, num_pools):
             try:
                 tmp_lp_address = factory.allPairs(i)
             except Exception as err:
@@ -206,7 +209,7 @@ def main() -> None:
                         else:
                             erc_20s[token1_address] = tmp_token
                             pairs[tmp_lp_address]["token1"] = {
-                                "address": token0_address,
+                                "address": token1_address,
                                 **tmp_token,
                             }
 
